@@ -1,0 +1,258 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="Current">
+  <PropertyGroup>
+    <StartAction>Program</StartAction>
+    <StartProgram>C:\Program Files (x86)\Zone Five Software\SportTracks 3\SportTracks.exe</StartProgram>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8A7EBCE8-1745-43FA-A4AD-C0B67139A82F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MeanMax</RootNamespace>
+    <AssemblyName>MeanMax</AssemblyName>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>Current</OldToolsVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;Debug</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;Release</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Data, Version=3.0.3736.38312, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Zone Five Software\SportTracks 3\Common.Data.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Common.Visuals, Version=3.0.3736.38316, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Zone Five Software\SportTracks 3\Common.Visuals.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZedGraph, Version=5.1.5.28844, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\zedgraph_dll_v5.1.5\ZedGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\ColumnDefinition.cs" />
+    <Compile Include="Data\CriticalLineDefinition.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\GlobalSettings.cs" />
+    <Compile Include="UI\DetailPage\MeanMaxDetailControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\DetailPage\MeanMaxDetailControl.Designer.cs">
+      <DependentUpon>MeanMaxDetailControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Images.Designer.cs">
+      <DependentUpon>Images.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="UI\Common.cs" />
+    <Compile Include="Data\MeanMaxCache.cs" />
+    <Compile Include="UI\DetailPage\MeanMaxDetail.cs" />
+    <Compile Include="GUIDs.cs" />
+    <Compile Include="UI\ReportView\MeanMaxReport.cs" />
+    <Compile Include="UI\ReportView\MeanMaxReportControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ReportView\MeanMaxReportControl.Designer.cs">
+      <DependentUpon>MeanMaxReportControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Util\SaveImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Util\SaveImage.designer.cs">
+      <DependentUpon>SaveImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Utilities.cs" />
+    <Compile Include="UI\Extend.cs" />
+    <Compile Include="PluginMain.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Images.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Images.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Strings.da.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Strings.de.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Strings.es.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Strings.fr.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Strings.it.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Strings.nl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Strings.no.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Strings.pl.resx">
+      <DependentUpon>Strings.resx</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Strings.pt.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Strings.pt-PT.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Strings.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Strings.sv.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Strings.zh-CHT.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DetailPage\MeanMaxDetailControl.resx">
+      <DependentUpon>MeanMaxDetailControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ReportView\MeanMaxReportControl.resx">
+      <DependentUpon>MeanMaxReportControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Util\SaveImage.resx">
+      <DependentUpon>SaveImage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- <Import Project="$(ProgramFiles)\MSBuild\StyleCop\v4.7\StyleCop.targets" /> -->
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>REM Set the plugin GUID
+set guid=bc3d4866-8fc1-4e19-9cec-737fd9f2e72f
+
+REM ST version, for plugin.xml file
+SET StVersion=3.0.3826
+SET StPluginPath=%25ALLUSERSPROFILE%25\Application Data\ZoneFiveSoftware\SportTracks\3\Plugins
+
+REM 7-zip must be configured, hardcoded path used
+set ZIPPATH=C:\Program Files\7-Zip
+
+set stPlgFile=$(SolutionDir)$(ProjectName).st3plugin
+REM To move a .st2plugin to common area, create environment variable (or set it below)
+REM set stPlgoutdir=g:\Users\go\dev\web
+
+set StTarget=%25StPluginPath%25\Installed\%25guid%25
+IF NOT EXIST %25StTarget%25 mkdir %25StTarget%25
+
+ECHO Generate the plugin.xml file
+ECHO ^&lt;?xml version="1.0" encoding="utf-8" ?^&gt; &gt;  "$(TargetDir)\plugin.xml"
+ECHO ^&lt;plugin id="%25guid%25" minimumCommonVersion="%25StVersion%25" /^&gt; &gt;&gt; "$(TargetDir)\plugin.xml"
+
+REM XCOPY depreciated in Vista, use for XP compatibility
+REM XCOPY  "$(TargetDir)*.*" "%25StTarget%25" /I/Y/Q/E/S
+ECHO xcopy "$(TargetDir)*.dll" "%25StTarget%25" /S /Y
+xcopy "$(TargetDir)*.dll" "%25StTarget%25\" /S /Y
+
+set Release=No
+IF "$(ConfigurationName)"=="Release" set Release=Yes
+
+IF NOT "%25Release%25"=="Yes" GOTO END
+
+IF NOT EXIST "%25programfiles%25\7-zip\7z.exe" GOTO END
+
+IF EXIST "%25stPlgFile%25" del "%25stPlgFile%25" /Q
+"%25ZIPPATH%25\7z.exe" a -r -tzip "%25stPlgFile%25" "$(TargetDir)*" -x!*.st2plugin -x!*.tmp -x!*.pdb -x!$(ProjectName).xml
+
+IF "%25stPlgoutdir%25"=="" GOTO END
+IF NOT EXIST "%25stPlgoutdir%25" GOTO END
+COPY "%25stPlgFile%25" "%25stPlgoutdir%25"
+
+:END</PostBuildEvent>
+  </PropertyGroup>
+</Project>
